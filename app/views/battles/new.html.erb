@@ -1,1 +1,21 @@
-<h1>New Battle</h1>
+<h1>New Army</h1> 
+<div class="box">
+  <% if notice.present? %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  <%= form_for Army.new, :url => armies_path, :html => { :method => :post } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, style: "max-width: 80%" %>
+    <br>
+    <%= f.label :infantry %>
+    <%= f.number_field :infantry, in: 1..10000, step: 1 %>
+    <br>
+    <%= f.label :archers %>
+    <%= f.number_field :archers, in: 1..2500, step: 1 %>
+    <br>
+    <%= f.label :knights %>
+    <%= f.number_field :knights, in: 1..500, step: 1 %>
+    <br>
+    <%= f.submit 'Save Army', class: 'btn btn-big-game hvr-pulse-grow hvr-back-pulse' %>
+  <% end %>
+</div>

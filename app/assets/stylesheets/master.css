@@ -1,0 +1,9 @@
+.box {
+  background: rgba(29, 25, 25, 0.94);
+  padding: 15px;
+  color: #C7C1A9;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 6px;
+  display: inline-block;
+}
