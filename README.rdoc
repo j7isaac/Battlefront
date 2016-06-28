@@ -9,7 +9,7 @@ The battle algorithm works as follows:
 <tt>battle_armies = [Army.find(army_a), Army.find(army_b)]</tt>
 
 * Random army is chosen to initiate attack
-```
+<tt>
   # List the opposing armies
   battle_armies = [Army.find(army_a), Army.find(army_b)]
   # Assign a random army to a variable
@@ -21,5 +21,5 @@ The battle algorithm works as follows:
   # Build soldier arrays for both armies
   @attack_initiator.build_army
   @other_army.build_army
-```
+</tt>
 
