@@ -5,11 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  infantry: 4
-  archers: 2
-  knights: 3
+  id: 2
+  infantry: 6
+  archers: 6
+  knights: 6
 
 two:
-  infantry: 30
-  archers: 40
-  knights: 50
+  id: 3
+  infantry: 1
+  archers: 2
+  knights: 1
