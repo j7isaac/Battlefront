@@ -1,28 +1,25 @@
-== README
+== Battlefront
+A battle simulation app.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is build on Ruby on Rails with a Postgresql database.
 
-Things you may want to cover:
+The battle algorithm works as follows:
 
-* Ruby version
+* Random army is chosen to initiate attack
+<tt>battle_armies = [Army.find(army_a), Army.find(army_b)]</tt>
 
-* System dependencies
+* Random army is chosen to initiate attack
+<tt>
+  # List the opposing armies
+  battle_armies = [Army.find(army_a), Army.find(army_b)]
+  # Assign a random army to a variable
+  @attack_initiator = battle_armies.sample
+  # Removed previous army from array
+  battle_armies.delete(@attack_initiator)
+  # Assign the remaining army to a variable
+  @other_army = battle_armies[0]
+  # Build soldier arrays for both armies
+  @attack_initiator.build_army
+  @other_army.build_army
+</tt>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
