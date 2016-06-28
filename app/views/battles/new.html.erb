@@ -1,5 +1,6 @@
-<h1>New Army</h1> 
+<!-- Battles Form -->
 <div class="box">
+  <h1>New Army</h1>
   <% if notice.present? %>
     <p class="notice"><%= notice %></p>
   <% end %>
@@ -19,9 +20,10 @@
     <%= f.submit 'Save Army', class: '#' %>
   <% end %>
 </div>
-
-<h1>New Battle</h1>
+<br>
+<!-- Battles Form -->
 <div class='box'>
+  <h1>New Battle</h1>
   <%= form_for @battle do |f| %>
     <%= f.collection_select :army_a, Army.all, :id, :name, :prompt => 'Army One' %>
     <br>
