@@ -56,7 +56,7 @@ The battle algorithm works as follows:
   end
 ```
 
-The battle that are displayed after a battle work as follows:
+The battle data that is displayed after a battle works as follows:
 * A count is made for each type of soldier the surviving army has.
 ```
   def infantry_remaining
@@ -81,5 +81,27 @@ The battle that are displayed after a battle work as follows:
     (a.to_f / b.to_f * 100).round(2).to_s + '%'
   end
 ```
+* These calculations are then display on the page.
+```
+<div class="flex-container">
+  <div class='box2'>
+    <h1><%= "#{@battle.battle!.name.capitalize} is Victorious!" %></h1>
+    <h3>Battle Report</h3>
+    <hr>
+    <p>
+      <%= "#{@battle.victor.name.capitalize} army remained with:"%><br>
+      <%= "#{@battle.victor.infantry_remaining} out of #{@battle.victor.infantry} Infantry units remaining"%><br>
+      <%= "#{@battle.victor.archers_remaining} out of #{@battle.victor.archers} Archer units remaining"%><br>
+      <%= "#{@battle.victor.knights_remaining} out of #{@battle.victor.knights} Knight units remaining"%><br>
+      <%= "#{@battle.victor.damage_percentage} Damage Sustained"%>
+    </p>
+    <%= link_to "New Battle", root_path, class: "btn" %>
+  </div>
+</div>
+```
+
+Please create your own armies, battle them and enjoy!
+
+
 
 
