@@ -4,8 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+one:
+  infantry: 4
+  archers: 2
+  knights: 3
+
+two:
+  infantry: 30
+  archers: 40
+  knights: 50
