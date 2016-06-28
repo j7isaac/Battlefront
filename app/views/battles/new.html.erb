@@ -16,6 +16,17 @@
     <%= f.label :knights %>
     <%= f.number_field :knights, in: 1..500, step: 1 %>
     <br>
-    <%= f.submit 'Save Army', class: 'btn btn-big-game hvr-pulse-grow hvr-back-pulse' %>
+    <%= f.submit 'Save Army', class: '#' %>
+  <% end %>
+</div>
+
+<h1>New Battle</h1>
+<div class='box'>
+  <%= form_for @battle do |f| %>
+    <%= f.collection_select :army_a, Army.all, :id, :name, :prompt => 'Army One' %>
+    <br>
+    <%= f.collection_select :army_b, Army.all, :id, :name, :prompt => 'Army Two' %>
+    <br>
+    <%= f.submit "Battle!", class: '#' %>
   <% end %>
 </div>
