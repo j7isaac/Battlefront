@@ -1,6 +1,4 @@
 class Battle < ActiveRecord::Base
-  after_create :battle!
-
   # The method will create a loop of attacks until there is a victor
   def battle!
     # List the opposing armies
