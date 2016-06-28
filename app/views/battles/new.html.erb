@@ -1,34 +1,37 @@
 <!-- Battles Form -->
-<div class="box">
-  <h1>New Army</h1>
-  <% if notice.present? %>
-    <p class="notice"><%= notice %></p>
-  <% end %>
-  <%= form_for Army.new, :url => armies_path, :html => { :method => :post } do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, style: "max-width: 80%" %>
-    <br>
-    <%= f.label :infantry %>
-    <%= f.number_field :infantry, in: 1..10000, step: 1 %>
-    <br>
-    <%= f.label :archers %>
-    <%= f.number_field :archers, in: 1..2500, step: 1 %>
-    <br>
-    <%= f.label :knights %>
-    <%= f.number_field :knights, in: 1..500, step: 1 %>
-    <br>
-    <%= f.submit 'Save Army', class: '#' %>
-  <% end %>
-</div>
-<br>
-<!-- Battles Form -->
-<div class='box'>
-  <h1>New Battle</h1>
-  <%= form_for @battle do |f| %>
-    <%= f.collection_select :army_a, Army.all, :id, :name, :prompt => 'Army One' %>
-    <br>
-    <%= f.collection_select :army_b, Army.all, :id, :name, :prompt => 'Army Two' %>
-    <br>
-    <%= f.submit "Battle!", class: '#' %>
-  <% end %>
+<div class="flex-container">
+  <div class="box">
+    <h1>New Army</h1>
+    <%= form_for Army.new, :url => armies_path, :html => { :method => :post } do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, style: "max-width: 80%" %>
+      <br>
+      <%= f.label :infantry %>
+      <%= f.number_field :infantry, in: 1..10000, step: 1 %>
+      <br>
+      <%= f.label :archers %>
+      <%= f.number_field :archers, in: 1..2500, step: 1 %>
+      <br>
+      <%= f.label :knights %>
+      <%= f.number_field :knights, in: 1..500, step: 1 %>
+      <br><br>
+      <%= f.submit 'Save Army', class: 'btn' %>
+    <% end %>
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+  </div>
+  <br>
+  <!-- Battles Form -->
+  <div class='box'>
+    <h1>New Battle</h1>
+    <br><br>
+    <%= form_for @battle do |f| %>
+      <%= f.collection_select :army_a, Army.all, :id, :name, :prompt => 'Select Army' %>
+      <br>
+      <%= f.collection_select :army_b, Army.all, :id, :name, :prompt => 'Select Army' %>
+      <br><br><br><br><br>
+      <%= f.submit "Battle!", class: 'btn' %>
+    <% end %>
+  </div>
 </div>

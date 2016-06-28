@@ -1,15 +1,17 @@
-<h1><%= "#{@battle.battle!.name.capitalize} is Victorious!" %></h1>
-<div class='box'>
-  <h3>Battle Report</h3>
-  <hr>
-  <p>
-    <%= "#{@battle.victor.name.capitalize} army remained with:"%><br>
-    <%= "#{@battle.victor.infantry_remaining} out of #{@battle.victor.infantry} Infantry units remaining"%><br>
-    <%= "#{@battle.victor.archers_remaining} out of #{@battle.victor.archers} Archer units remaining"%><br>
-    <%= "#{@battle.victor.knights_remaining} out of #{@battle.victor.knights} Knight units remaining"%><br>
-    <%= "#{@battle.victor.damage_percentage} Damage Sustained"%>
-  </p>
-  <%= link_to "New Battle", root_path, class: "#" %>
+<div class="flex-container">
+  <div class='box2'>
+    <h1><%= "#{@battle.battle!.name.capitalize} is Victorious!" %></h1>
+    <h3>Battle Report</h3>
+    <hr>
+    <p>
+      <%= "#{@battle.victor.name.capitalize} army remained with:"%><br>
+      <%= "#{@battle.victor.infantry_remaining} out of #{@battle.victor.infantry} Infantry units remaining"%><br>
+      <%= "#{@battle.victor.archers_remaining} out of #{@battle.victor.archers} Archer units remaining"%><br>
+      <%= "#{@battle.victor.knights_remaining} out of #{@battle.victor.knights} Knight units remaining"%><br>
+      <%= "#{@battle.victor.damage_percentage} Damage Sustained"%>
+    </p>
+    <%= link_to "New Battle", root_path, class: "btn" %>
+  </div>
 </div>
 
 
