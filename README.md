@@ -1,12 +1,12 @@
-== Battlefront
-A battle simulation app.
+# Battlefront
+## A battle simulation app.
 
 This app is build on Ruby on Rails with a Postgresql database.
 
 The battle algorithm works as follows:
 
 * Random army is chosen to initiate attack
-<tt>battle_armies = [Army.find(army_a), Army.find(army_b)]</tt>
+```battle_armies = [Army.find(army_a), Army.find(army_b)]```
 
 * Random army is chosen to initiate attack
 ```
